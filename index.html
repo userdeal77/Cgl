@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 GK Questions for CGL (Part 1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .question-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .solution {
+            display: none;
+            border-left: 3px solid #10B981; /* Emerald-500 */
+        }
+        .solution-toggle {
+            cursor: pointer;
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .tag-ca { background-color: #ECFDF5; color: #065F46; } /* Emerald */
+        .tag-history { background-color: #FEF2F2; color: #991B1B; } /* Red */
+        .tag-polity { background-color: #EFF6FF; color: #1E40AF; } /* Blue */
+        .tag-geography { background-color: #F0F9FF; color: #0C4A6E; } /* Sky */
+        .tag-science { background-color: #F5F3FF; color: #5B21B6; } /* Violet */
+        .tag-eco { background-color: #FFFBEB; color: #B45309; } /* Amber */
+        .tag-static { background-color: #F3F4F6; color: #4B5563; } /* Gray */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-emerald-500 pb-2">
+                CGL General Knowledge Challenge
+            </h1>
+            <p class="text-lg text-gray-600 mt-2">Part 1: 100 Moderate to Difficult Questions</p>
+        </header>
+
+        <div id="questions-container" class="space-y-6">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            // Current Affairs (from PDF and recent)
+            {
+                question: "Consider the following statements regarding the Pradhan Mantri Mudra Yojana (PMMY) as per recent updates:",
+                statements: [
+                    "I. The loan limit under the 'Tarun' category has been increased to ₹20 lakh.",
+                    "II. A new tier called 'Tarun Plus' has been introduced for loans between ₹10 lakh and ₹20 lakh.",
+                    "III. The scheme was initially launched in 2018 to provide affordable credit to micro-enterprises."
+                ],
+                options: ["Only I and II", "Only II", "Only I and III", "All of the above"],
+                answer: "Only II",
+                explanation: "Statement I is incorrect; the overall PMMY limit was doubled to ₹20 lakh, but the 'Tarun' category itself remains for loans from ₹5 lakh to ₹10 lakh. Statement II is correct; the 'Tarun Plus' tier was newly introduced for the ₹10 lakh to ₹20 lakh bracket. Statement III is incorrect; PMMY was launched in 2015, not 2018. The core objective is correct.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "With reference to the 16th BRICS Summit held in Kazan, Russia, which of the following statements is/are correct?",
+                statements: [
+                    "I. The theme was 'Strengthening Multilateralism for Just Global Development and Security'.",
+                    "II. Egypt, Ethiopia, Iran, and UAE were officially inducted as new full members.",
+                    "III. Nigeria was invited to join as a partner country."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. The summit's theme was indeed focused on strengthening multilateralism. The expansion included Egypt, Ethiopia, Iran, and the UAE. Nigeria's inclusion as a partner country was another significant development from the summit.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Which Indian city was recently recognized as a 'World Craft City' by the World Craft Council (WCC), making it the fourth Indian city to receive this honor?",
+                options: ["Jaipur", "Srinagar", "Mysore", "Malappuram"],
+                answer: "Srinagar",
+                explanation: "Srinagar has been recognized as a 'World Craft City' by the WCC. The other three Indian cities with this recognition are Jaipur (Rajasthan), Malappuram (Kerala), and Mysore (Karnataka). This award acknowledges the rich heritage of crafts in the city.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Consider the following statements about the recent developments in India's defence sector:",
+                statements: [
+                    "I. 'SANJAY' is an advanced Battlefield Surveillance System developed jointly by the Indian Army and Bharat Electronics Limited (BEL).",
+                    "II. 'Bhargavastra' is India's first affordable micro-missile air defence system, developed by DRDO.",
+                    "III. The Ministry of Defence has declared 2025 as the 'Year of Defence Reforms'."
+                ],
+                options: ["Only I and III", "Only II and III", "Only I and II", "All I, II, and III"],
+                answer: "Only I and III",
+                explanation: "Statement I is correct. Statement II is incorrect; Bhargavastra was developed by a private firm, Solar Defence and Aerospace Limited (SDAL), not DRDO. Statement III is correct, reflecting the government's focus on modernizing the armed forces.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The book 'Why Bharat Matters' was recently launched by its author. Who is the author?",
+                options: ["Amit Shah", "S. Jaishankar", "Amitabh Kant", "Ramachandra Guha"],
+                answer: "S. Jaishankar",
+                explanation: "Dr. S. Jaishankar, the External Affairs Minister of India, authored the book 'Why Bharat Matters', which discusses India's foreign policy and its role in the contemporary world. Amitabh Kant wrote 'How India Scaled Mt G20'.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The 59th Jnanpith Award for 2024 was conferred upon which renowned writer?",
+                options: ["Gulzar", "Jagadguru Rambhadracharya", "Vinod Kumar Shukla", "Damodar Mauzo"],
+                answer: "Vinod Kumar Shukla",
+                explanation: "The 59th Jnanpith Award for the year 2024 was awarded to Hindi writer Vinod Kumar Shukla. The award for 2023 was jointly given to Sanskrit scholar Jagadguru Rambhadracharya and celebrated Urdu poet and lyricist Gulzar.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Which of the following statements regarding the Paris Olympics 2024 is/are correct from an Indian perspective?",
+                statements: [
+                    "I. India won a total of 6 medals, including one silver and five bronze.",
+                    "II. Manu Bhaker won two bronze medals in shooting.",
+                    "III. The Indian Men's Hockey Team secured a silver medal."
+                ],
+                options: ["Only I and II", "Only II", "Only I and III", "All I, II, and III"],
+                answer: "Only I and II",
+                explanation: "Statements I and II are correct. India's final tally was 6 medals (1 Silver, 5 Bronze). Manu Bhaker was a standout performer with two bronze medals. Statement III is incorrect; the Indian Men's Hockey Team won a bronze medal, not silver.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Which of the following languages were recently approved by the Union Cabinet for the status of 'Classical Language'?",
+                statements: [
+                    "I. Marathi",
+                    "II. Pali",
+                    "III. Bengali",
+                    "IV. Konkani"
+                ],
+                options: ["Only I, II and III", "Only I, III and IV", "Only II and IV", "All of the above"],
+                answer: "Only I, II and III",
+                explanation: "The Union Cabinet approved classical language status for five languages: Marathi, Bengali, Pali, Prakrit, and Assamese. This took the total number of classical languages from 6 to 11. Konkani was not part of this recent list.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The 'NAMO Drone Didi' scheme aims to empower women Self Help Groups (SHGs). Which of the following statements accurately describes its objective?",
+                options: [
+                    "To provide drones to women for surveillance in rural areas.",
+                    "To train 15,000 women SHGs as drone pilots for agricultural purposes like crop monitoring and spraying.",
+                    "To set up drone manufacturing units operated entirely by women.",
+                    "To use drones for delivering medical supplies in remote areas, managed by women's SHGs."
+                ],
+                answer: "To train 15,000 women SHGs as drone pilots for agricultural purposes like crop monitoring and spraying.",
+                explanation: "The NAMO Drone Didi scheme specifically focuses on training 15,000 women from SHGs to become 'drone pilots'. These drones are to be used for agricultural tasks, providing a new avenue for livelihood and modernizing farming practices.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+             {
+                question: "Consider the recent appointments and select the correctly matched pair:",
+                statements: [
+                    "I. Gyanesh Kumar: 26th Chief Election Commissioner of India.",
+                    "II. Justice B.R. Gavai: Appointed as the 52nd Chief Justice of India.",
+                    "III. K. Sanjay Murthy: Appointed as the new Comptroller & Auditor General (CAG) of India."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All statements are correct. Gyanesh Kumar succeeded Rajiv Kumar as the CEC. Justice B.R. Gavai is slated to become the 52nd CJI. K. Sanjay Murthy has been appointed as the new CAG of India.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The 'PM-SURAJ' portal was launched in 2024. What is its primary purpose?",
+                options: [
+                    "To provide solar power connections to households in hilly areas.",
+                    "A centralized platform for SC/ST entrepreneurs to access credit and schemes.",
+                    "A portal for tracking the progress of infrastructure projects under the Smart City Mission.",
+                    "A national database for unorganized workers to avail social security benefits."
+                ],
+                answer: "A centralized platform for SC/ST entrepreneurs to access credit and schemes.",
+                explanation: "The PM-SURAJ (Samajik Utthan & Rozgar Adharit Jankalyan) portal is a one-stop platform designed to provide credit support and access to various government schemes for entrepreneurs from Scheduled Castes (SC) and Scheduled Tribes (ST).",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Which state became the first in India to implement the Uniform Civil Code (UCC) in 2024?",
+                options: ["Goa", "Gujarat", "Uttarakhand", "Uttar Pradesh"],
+                answer: "Uttarakhand",
+                explanation: "Uttarakhand became the first state in independent India to pass and implement the Uniform Civil Code (UCC) bill. While Goa has a common civil code from the Portuguese era, Uttarakhand is the first to enact it post-independence through its state legislature.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The 'ADITI' scheme, launched in 2024, is associated with which sector?",
+                options: ["Healthcare", "Defence", "Education", "Space Technology"],
+                answer: "Defence",
+                explanation: "The ADITI (Acing Development of Innovative Technologies with iDEX) scheme was launched by the Ministry of Defence. It aims to promote innovation in defence technology by supporting startups and MSMEs with grants to develop critical and strategic technologies.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Which Indian film won the 'Grand Prix' at the 77th Cannes Film Festival?",
+                options: ["All We Imagine as Light", "Santosh", "Laapata Ladies", "It Was Just an Accident"],
+                answer: "All We Imagine as Light",
+                explanation: "'All We Imagine as Light', directed by Payal Kapadia, created history by winning the Grand Prix award at the Cannes Film Festival. This is the second-most prestigious prize of the festival after the Palme d'Or.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The world's tallest statue of Dr. B.R. Ambedkar, known as the 'Statue of Social Justice', was unveiled in which state?",
+                options: ["Maharashtra", "Telangana", "Andhra Pradesh", "Uttar Pradesh"],
+                answer: "Andhra Pradesh",
+                explanation: "The 206-feet tall 'Statue of Social Justice', depicting Dr. B.R. Ambedkar, was inaugurated in Vijayawada, Andhra Pradesh. It is one of the tallest statues of Ambedkar in the world.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The term 'Brain rot' was declared the Word of the Year 2024 by which organization?",
+                options: ["Collins Dictionary", "Merriam-Webster", "Cambridge Dictionary", "Oxford University Press"],
+                answer: "Oxford University Press",
+                explanation: "Oxford University Press named 'Brain rot' as its Word of the Year 2024. The term refers to content considered to be of low quality or value, or the supposed negative effects of consuming it.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Who was honored with the Major Dhyan Chand Khel Ratna Award for 2023?",
+                options: ["Neeraj Chopra", "Satwiksairaj Rankireddy and Chirag Shetty", "Manu Bhaker", "P. R. Sreejesh"],
+                answer: "Satwiksairaj Rankireddy and Chirag Shetty",
+                explanation: "The badminton duo of Satwiksairaj Rankireddy and Chirag Shetty were jointly awarded the Major Dhyan Chand Khel Ratna Award for 2023 for their outstanding performances, including winning gold at the Asian Games.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "India's first indigenous Fast Breeder Reactor (FBR) commenced operations at which location?",
+                options: ["Kudankulam, Tamil Nadu", "Tarapur, Maharashtra", "Kalpakkam, Tamil Nadu", "Rawatbhata, Rajasthan"],
+                answer: "Kalpakkam, Tamil Nadu",
+                explanation: "India's first indigenous Prototype Fast Breeder Reactor (PFBR) with a capacity of 500 MWe is located at Kalpakkam, Tamil Nadu. This is a significant step in India's three-stage nuclear power program.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The 'Operation Brahma' was launched by India for what purpose?",
+                options: ["Evacuation of Indians from Israel", "Humanitarian aid to earthquake-hit Myanmar", "Evacuation of Indians from Sudan", "Anti-cybercrime initiative"],
+                answer: "Humanitarian aid to earthquake-hit Myanmar",
+                explanation: "India launched 'Operation Brahma' to provide humanitarian assistance and disaster relief (HADR) to Myanmar after it was struck by a powerful earthquake.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "According to the Henley Passport Index 2025, what is India's rank?",
+                options: ["80th", "85th", "90th", "96th"],
+                answer: "85th",
+                explanation: "As per the Henley Passport Index 2025, India's passport ranked 85th, providing visa-free or visa-on-arrival access to a number of countries. Singapore holds the top rank.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+             {
+                question: "The 'Vibrant Villages Programme-II' was launched by the central government. Which statement correctly identifies its scope?",
+                options: [
+                    "It is for the comprehensive development of villages along India's northern border with China.",
+                    "It is a central sector scheme for developing villages excluding the northern border villages.",
+                    "It focuses exclusively on developing villages in the North-Eastern states.",
+                    "It aims to develop coastal villages to boost the blue economy."
+                ],
+                answer: "It is a central sector scheme for developing villages excluding the northern border villages.",
+                explanation: "Vibrant Villages Programme-I focuses on the northern border villages. VVP-II is a distinct central sector scheme launched to develop villages in other land border areas, excluding those covered under VVP-I.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Who won the Booker Prize 2024 for the novel 'Orbital'?",
+                options: ["Jenny Erpenbeck", "Samantha Harvey", "Paul Lynch", "Shehan Karunatilaka"],
+                answer: "Samantha Harvey",
+                explanation: "British author Samantha Harvey won the Booker Prize 2024 for her novel 'Orbital'. Jenny Erpenbeck won the International Booker Prize 2024 for 'Kairos'.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The 38th National Games 2025 were hosted by which state?",
+                options: ["Goa", "Gujarat", "Uttarakhand", "Meghalaya"],
+                answer: "Uttarakhand",
+                explanation: "The 38th edition of the National Games was held in Uttarakhand. The mascot was 'Mauli' (Monal Bird). Goa hosted the 37th edition, and Meghalaya is slated to host the 39th.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "What is the primary objective of the 'MISHTI' scheme launched by the Government of India?",
+                options: [
+                    "To promote sweet water aquaculture in coastal states.",
+                    "To plant mangroves along the coastline and on salt pan lands.",
+                    "To develop infrastructure for tourism in island territories.",
+                    "To provide financial aid to traditional fishermen."
+                ],
+                answer: "To plant mangroves along the coastline and on salt pan lands.",
+                explanation: "MISHTI (Mangrove Initiative for Shoreline Habitats & Tangible Incomes) is a central government initiative focused on mangrove plantation. It aims to protect coastal ecosystems and support livelihoods.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Who has been appointed as the head coach of the Indian Men's Cricket Team?",
+                options: ["VVS Laxman", "Gautam Gambhir", "Anil Kumble", "Rahul Dravid"],
+                answer: "Gautam Gambhir",
+                explanation: "Following Rahul Dravid's tenure, former Indian cricketer Gautam Gambhir has been appointed as the new head coach of the Indian Men's Cricket Team.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            // History
+            {
+                question: "Consider the following statements regarding the administrative system of the Mauryan Empire:",
+                statements: [
+                    "I. The empire was divided into provinces, which were further subdivided into districts called 'Ahara'.",
+                    "II. The 'Samaharta' was the chief of the revenue department, equivalent to a modern Finance Minister.",
+                    "III. The 'Sannidhata' was the chief treasury officer, responsible for the storage of royal treasure and state income."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "Only II and III",
+                explanation: "Statement I is incorrect. While the empire was divided into provinces, the districts were known as 'Vishayas' or 'Janapadas', not 'Ahara'. Statements II and III correctly describe the roles of the Samaharta and Sannidhata, who were key officials in the Mauryan central administration.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Which of the following events occurred during the viceroyalty of Lord Curzon (1899-1905)?",
+                statements: [
+                    "I. Establishment of the Archaeological Survey of India (ASI) as a permanent body.",
+                    "II. The partition of Bengal.",
+                    "III. Introduction of the Indian Universities Act.",
+                    "IV. Passing of the Indian Councils Act of 1909 (Morley-Minto Reforms)."
+                ],
+                options: ["Only I, II and III", "Only I and II", "Only II, III and IV", "All of the above"],
+                answer: "Only I, II and III",
+                explanation: "Lord Curzon's tenure was marked by significant administrative changes. He passed the Ancient Monuments Preservation Act (1904) which gave the ASI its modern structure (I). He is most infamous for the Partition of Bengal in 1905 (II). The Indian Universities Act was passed in 1904 to bring universities under stricter government control (III). The Morley-Minto Reforms (IV) came in 1909, after Curzon had left office.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "The 'Doctrine of Lapse' was an annexation policy famously applied by which Governor-General of India?",
+                options: ["Lord Wellesley", "Lord Dalhousie", "Lord William Bentinck", "Lord Canning"],
+                answer: "Lord Dalhousie",
+                explanation: "The Doctrine of Lapse was an annexation policy applied by Lord Dalhousie, Governor-General of India from 1848 to 1856. According to the doctrine, any princely state under the direct or indirect control of the East India Company would be annexed if the ruler did not have a 'natural' or 'legal' heir. Satara, Jaipur, Sambalpur, Nagpur, and Jhansi were annexed under this policy. Lord Wellesley introduced the Subsidiary Alliance system.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Arrange the following events of the Indian freedom struggle in chronological order:",
+                statements: [
+                    "1. Formation of the Swaraj Party",
+                    "2. Jallianwala Bagh Massacre",
+                    "3. Chauri Chaura incident",
+                    "4. Suspension of the Non-Cooperation Movement"
+                ],
+                options: ["2, 1, 3, 4", "2, 3, 4, 1", "1, 2, 3, 4", "2, 4, 3, 1"],
+                answer: "2, 3, 4, 1",
+                explanation: "The correct chronological order is: Jallianwala Bagh Massacre (April 1919), Chauri Chaura incident (February 1922), Suspension of the Non-Cooperation Movement (February 1922, immediately after Chauri Chaura), and Formation of the Swaraj Party (January 1923).",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "The concept of 'Ashtapradhan' (council of eight ministers) was a feature of the administration of:",
+                options: ["The Gupta Empire", "The Maratha Empire", "The Vijayanagara Empire", "The Mughal Empire"],
+                answer: "The Maratha Empire",
+                explanation: "The Ashtapradhan was the council of eight ministers that administered the Maratha empire under Chhatrapati Shivaji. Each minister was directly responsible to Shivaji. The Vijayanagara Empire had a council known as the 'Ashtadiggajas', but they were eight great poets in the court of Krishnadevaraya, not ministers.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Consider the following statements about the Indus Valley Civilization:",
+                statements: [
+                    "I. The Great Bath at Mohenjo-Daro was likely used for ritualistic bathing.",
+                    "II. Iron was extensively used for making tools and weapons.",
+                    "III. The civilization had a well-planned grid system for its cities."
+                ],
+                options: ["Only I and III", "Only I", "Only II and III", "All I, II, and III"],
+                answer: "Only I and III",
+                explanation: "Statement II is incorrect. The Indus Valley Civilization was a Bronze Age civilization. The use of iron was not known to them; it became common in the subsequent Vedic period. Statements I and III are correct; the Great Bath is a prominent structure suggesting ritual use, and their cities like Mohenjo-Daro and Harappa are famous for their advanced grid-based urban planning.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Who among the following was the author of 'Ain-i-Akbari' and 'Akbarnama'?",
+                options: ["Faizi", "Abul Fazl", "Todar Mal", "Abdul Qadir Badauni"],
+                answer: "Abul Fazl",
+                explanation: "Abul Fazl was one of the 'Navaratnas' (nine jewels) in the court of Emperor Akbar. He authored the 'Akbarnama', a detailed history of Akbar's reign. The 'Ain-i-Akbari' is the third and final volume of the Akbarnama, which details the administration of the empire. Todar Mal was the finance minister.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "The Third Battle of Panipat (1761) was fought between:",
+                options: ["The Maratha Empire and the Durrani Empire", "The Mughal Empire and Nader Shah", "The British East India Company and the Nawab of Bengal", "The Maratha Empire and the British East India Company"],
+                answer: "The Maratha Empire and the Durrani Empire",
+                explanation: "The Third Battle of Panipat was a major confrontation fought on January 14, 1761. It pitted the invading forces of the Afghan ruler, Ahmad Shah Durrani (Abdali), against the Maratha Empire. The battle resulted in a decisive victory for the Afghans and is considered one of the largest and most eventful battles fought in the 18th century.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Which of the following statements about the Gandhara School of Art is/are correct?",
+                statements: [
+                    "I. It flourished under the patronage of the Kushan emperors, especially Kanishka.",
+                    "II. It is also known as the Greco-Buddhist school of art due to its strong Hellenistic influence.",
+                    "III. The primary theme of this art form was the depiction of scenes from the Jataka tales and the life of Buddha."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. The Gandhara School of Art, which developed in the north-western part of the Indian subcontinent, received significant patronage from the Kushans. It is renowned for its unique blend of Indian themes and Greek artistic styles. The life of the Buddha and Bodhisattvas were the central themes of this art form.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "The Poona Pact of 1932 was an agreement between:",
+                options: ["Mahatma Gandhi and Lord Irwin", "Mahatma Gandhi and B.R. Ambedkar", "The Indian National Congress and the Muslim League", "Jawaharlal Nehru and Muhammad Ali Jinnah"],
+                answer: "Mahatma Gandhi and B.R. Ambedkar",
+                explanation: "The Poona Pact was an agreement signed between Mahatma Gandhi and Dr. B.R. Ambedkar on behalf of depressed classes and upper-caste Hindu leaders on September 24, 1932. It was signed to break the fast unto death that Gandhi was observing in Yerwada Jail. The pact abandoned the idea of separate electorates for the 'depressed classes' but reserved seats for them in the provincial legislatures.",
+                tag: "History", tagClass: "tag-history"
+            },
+            // Polity
+            {
+                question: "Consider the following statements regarding the powers of the President of India:",
+                statements: [
+                    "I. The President can promulgate ordinances only when both Houses of Parliament are not in session.",
+                    "II. The money bill can be introduced in the Parliament only with the prior recommendation of the President.",
+                    "III. The President has the power to grant pardon, reprieve, respite, or remission of punishment under Article 72."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "Only II and III",
+                explanation: "Statement I is incorrect. According to Article 123, the President can promulgate an ordinance when at least one House of Parliament is not in session. Statements II and III are correct. A money bill requires the President's prior recommendation (Article 110), and Article 72 grants the President pardoning powers.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "Which of the following are included in the 'basic structure' of the Indian Constitution as defined by the Supreme Court?",
+                statements: [
+                    "I. Supremacy of the Constitution",
+                    "II. The principle of separation of powers",
+                    "III. The federal character of the Constitution",
+                    "IV. The rule of law"
+                ],
+                options: ["Only I, II and IV", "Only I and III", "Only II, III and IV", "All I, II, III, and IV"],
+                answer: "All I, II, III, and IV",
+                explanation: "The 'basic structure' doctrine was laid down by the Supreme Court in the Kesavananda Bharati case (1973). While there is no exhaustive list, all the principles mentioned – supremacy of the Constitution, separation of powers, federalism, and the rule of law – have been repeatedly held by the court to be part of the basic structure, which cannot be amended by the Parliament.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "The 42nd Constitutional Amendment Act, 1976, is often called a 'mini-constitution'. Which of the following changes were made by this amendment?",
+                statements: [
+                    "I. Added the words 'Socialist', 'Secular', and 'Integrity' to the Preamble.",
+                    "II. Added Fundamental Duties for citizens.",
+                    "III. Made the President bound by the advice of the council of ministers."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. The 42nd Amendment was the most comprehensive amendment to the Constitution. It added 'Socialist', 'Secular', and 'Integrity' to the Preamble. It introduced Part IV-A, which contains the Fundamental Duties. It also made it obligatory for the President to act in accordance with the advice of the Council of Ministers.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "Which of the following statements correctly describes a 'Cut Motion' in the context of the Indian Parliament?",
+                options: [
+                    "A motion to cut short the debate on a bill.",
+                    "A power given to members of Lok Sabha to oppose a demand in the financial bill discussed by the government.",
+                    "A motion to remove a part of the President's speech from the official record.",
+                    "A proposal to reduce the salary of a minister as a form of censure."
+                ],
+                answer: "A power given to members of Lok Sabha to oppose a demand in the financial bill discussed by the government.",
+                explanation: "A Cut Motion is a special power vested in members of the Lok Sabha to oppose a demand being discussed for allocation of funds by the government in the Demand for Grants. If a cut motion is adopted, it amounts to a no-confidence vote, and if the government fails to prove its majority, it has to resign. There are three types: Policy Cut, Economy Cut, and Token Cut.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "The power of the Supreme Court of India to decide disputes between the Centre and the States falls under its:",
+                options: ["Advisory Jurisdiction", "Appellate Jurisdiction", "Original Jurisdiction", "Writ Jurisdiction"],
+                answer: "Original Jurisdiction",
+                explanation: "The original jurisdiction of the Supreme Court (under Article 131) extends to any dispute between the Government of India and one or more States; or between the Government of India and any State or States on one side and one or more other States on the other; or between two or more States. This means such cases can directly be filed in the Supreme Court.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "Consider the following statements about the Panchayati Raj system in India:",
+                statements: [
+                    "I. The 73rd Constitutional Amendment Act gave constitutional status to the Panchayati Raj institutions.",
+                    "II. It provides for a three-tier system of Panchayati Raj for all states having a population of over 20 lakh.",
+                    "III. One-third of the total number of seats are to be reserved for women."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. The 73rd Amendment Act of 1992 added a new Part IX to the Constitution, which constitutionalized the Panchayati Raj system. It mandates a three-tier structure (village, intermediate, and district levels) in states with a population above 20 lakh and reserves not less than one-third of the total seats for women (including the number of seats reserved for SC/ST women).",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "Which schedule of the Indian Constitution deals with the allocation of seats in the Rajya Sabha to the States and Union Territories?",
+                options: ["Third Schedule", "Fourth Schedule", "Fifth Schedule", "Sixth Schedule"],
+                answer: "Fourth Schedule",
+                explanation: "The Fourth Schedule of the Constitution of India deals with the allocation of seats for States and Union Territories in the Rajya Sabha (Council of States). The Third Schedule contains forms of Oaths or Affirmations. The Fifth and Sixth Schedules deal with the administration of scheduled areas and tribal areas.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "The Right to Privacy is protected as an intrinsic part of the Right to Life and Personal Liberty. Which of the following fundamental rights ensures this protection?",
+                options: ["Article 14", "Article 19", "Article 21", "Article 32"],
+                answer: "Article 21",
+                explanation: "In the landmark judgment of Justice K.S. Puttaswamy (Retd.) vs. Union of India (2017), a nine-judge bench of the Supreme Court declared the Right to Privacy as a fundamental right, protected as an intrinsic part of the Right to Life and Personal Liberty under Article 21 of the Constitution of India.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "A Joint Sitting of the two Houses of Parliament is presided over by the:",
+                options: ["President of India", "Vice-President of India", "Speaker of the Lok Sabha", "Prime Minister of India"],
+                answer: "Speaker of the Lok Sabha",
+                explanation: "According to Article 118 of the Constitution, in a joint sitting of both houses, the Speaker of the Lok Sabha presides. In the Speaker's absence, the Deputy Speaker of the Lok Sabha presides. If both are absent, the Deputy Chairman of the Rajya Sabha presides. The Chairman of the Rajya Sabha (the Vice-President) does not preside over a joint sitting.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "Which of the following Directive Principles of State Policy (DPSP) was added by the 42nd Amendment Act, 1976?",
+                statements: [
+                    "I. To secure opportunities for the healthy development of children (Article 39).",
+                    "II. To promote equal justice and to provide free legal aid to the poor (Article 39A).",
+                    "III. To take steps to secure the participation of workers in the management of industries (Article 43A)."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "The 42nd Amendment Act of 1976 added four new Directive Principles to the original list. They are: securing healthy development of children (Article 39), promoting equal justice and free legal aid (Article 39A), securing participation of workers in management of industries (Article 43A), and protecting and improving the environment (Article 48A).",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            // Geography
+            {
+                question: "Consider the following statements about the layers of the Earth's atmosphere:",
+                statements: [
+                    "I. The Troposphere is the lowest layer, and almost all weather phenomena occur here.",
+                    "II. The Ozone layer, which absorbs harmful UV radiation, is primarily located in the Mesosphere.",
+                    "III. The Thermosphere is characterized by a rapid increase in temperature with height due to the absorption of X-rays and UV radiation."
+                ],
+                options: ["Only I and III", "Only I and II", "Only II and III", "All I, II, and III"],
+                answer: "Only I and III",
+                explanation: "Statement II is incorrect. The Ozone layer is found in the Stratosphere, the layer above the Troposphere. The Mesosphere is above the Stratosphere and is the coldest layer. Statements I and III are correct. The Troposphere contains about 80% of the atmosphere's mass and is where weather occurs. The Thermosphere sees temperatures rise significantly with altitude.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "Which of the following pairs of a river and its tributary is NOT correctly matched?",
+                options: ["Godavari - Penganga", "Krishna - Bhima", "Narmada - Tawa", "Mahanadi - Manas"],
+                answer: "Mahanadi - Manas",
+                explanation: "Manas is a major tributary of the Brahmaputra river. The main tributaries of the Mahanadi are Seonath, Jonk, Hasdo, Mand, Ib, Ong, and Tel. Penganga is a tributary of Godavari, Bhima is a tributary of Krishna, and Tawa is a tributary of Narmada.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "The 'Roaring Forties', 'Furious Fifties', and 'Shrieking Sixties' are terms used to describe which of the following?",
+                options: [
+                    "Strong westerly winds found in the Southern Hemisphere.",
+                    "Warm ocean currents in the Atlantic Ocean.",
+                    "Periodic volcanic eruptions in the Pacific Ring of Fire.",
+                    "Intense cyclonic storms in the Caribbean Sea."
+                ],
+                answer: "Strong westerly winds found in the Southern Hemisphere.",
+                explanation: "These are names for the powerful and persistent westerly winds found in the Southern Hemisphere, between the latitudes of 40 and 70 degrees south. Their strength is enhanced by the vast expanse of ocean and the absence of large landmasses to serve as windbreaks.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "Consider the following statements regarding soil types in India:",
+                statements: [
+                    "I. Alluvial soils are the most widespread and are rich in potash but poor in phosphorus.",
+                    "II. Black soils (Regur) are ideal for growing cotton and are known for their self-ploughing character.",
+                    "III. Laterite soils develop in areas with high temperature and high rainfall and are rich in iron oxide and aluminium."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct descriptions of the major soil types in India. Alluvial soils are found in the northern plains. Black soils are typical of the Deccan trap region. Laterite soils are found in regions with alternating wet and dry seasons and are formed by intense leaching.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "The Strait of Gibraltar connects which two bodies of water?",
+                options: ["The Atlantic Ocean and the Mediterranean Sea", "The Red Sea and the Mediterranean Sea", "The Persian Gulf and the Arabian Sea", "The Black Sea and the Mediterranean Sea"],
+                answer: "The Atlantic Ocean and the Mediterranean Sea",
+                explanation: "The Strait of Gibraltar is a narrow strait that connects the Atlantic Ocean to the Mediterranean Sea and separates the Iberian Peninsula in Europe from Morocco in Africa. The Suez Canal connects the Red Sea and the Mediterranean Sea. The Strait of Hormuz connects the Persian Gulf and the Arabian Sea.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "Which of the following National Parks is famous for being the only floating park in the world?",
+                options: ["Keoladeo National Park, Rajasthan", "Keibul Lamjao National Park, Manipur", "Nokrek National Park, Meghalaya", "Namdapha National Park, Arunachal Pradesh"],
+                answer: "Keibul Lamjao National Park, Manipur",
+                explanation: "Keibul Lamjao National Park, located in Manipur, is the world's only floating national park. It is an integral part of Loktak Lake and is characterized by floating decomposed plant material locally called 'phumdis'. It is the last natural habitat of the endangered Sangai (brow-antlered deer).",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "The 'El Niño' phenomenon, which affects global weather patterns, is characterized by:",
+                options: [
+                    "Unusually cold ocean temperatures in the Equatorial Pacific.",
+                    "The abnormal warming of surface waters in the eastern tropical Pacific Ocean.",
+                    "The strengthening of the trade winds across the Pacific.",
+                    "Increased upwelling of cold, nutrient-rich water off the coast of Peru."
+                ],
+                answer: "The abnormal warming of surface waters in the eastern tropical Pacific Ocean.",
+                explanation: "El Niño is a climate pattern that describes the unusual warming of surface waters in the eastern tropical Pacific Ocean. It is the 'warm phase' of the larger El Niño–Southern Oscillation (ENSO) climate pattern. Its counterpart, La Niña, is the 'cool phase'. El Niño has significant impacts on weather, including causing droughts in some regions (like India and Australia) and heavy rainfall in others (like the Americas).",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "Match the following mountain passes with their respective states:",
+                statements: [
+                    "A. Nathu La Pass",
+                    "B. Shipki La Pass",
+                    "C. Bom Di La Pass",
+                    "D. Zoji La Pass",
+                    "1. Arunachal Pradesh",
+                    "2. Jammu & Kashmir (Ladakh UT)",
+                    "3. Sikkim",
+                    "4. Himachal Pradesh"
+                ],
+                options: ["A-3, B-4, C-1, D-2", "A-2, B-1, C-4, D-3", "A-3, B-1, C-4, D-2", "A-4, B-3, C-2, D-1"],
+                answer: "A-3, B-4, C-1, D-2",
+                explanation: "Nathu La is in Sikkim. Shipki La is in Himachal Pradesh, connecting it with Tibet. Bom Di La is in Arunachal Pradesh. Zoji La is in the Union Territory of Ladakh, connecting Srinagar with Leh.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "The Tropic of Cancer (23.5° N latitude) passes through which of the following groups of Indian states?",
+                options: ["Gujarat, Madhya Pradesh, Bihar, West Bengal", "Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram", "Rajasthan, Madhya Pradesh, Odisha, West Bengal", "Gujarat, Maharashtra, Chhattisgarh, Mizoram"],
+                answer: "Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram",
+                explanation: "The Tropic of Cancer passes through a total of 8 Indian states. The correct sequence from west to east is Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, and Mizoram. It does not pass through Bihar, Odisha, or Maharashtra.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "What type of climate is characterized by dry summers and mild, wet winters?",
+                options: ["Monsoon Climate", "Equatorial Climate", "Mediterranean Climate", "Tundra Climate"],
+                answer: "Mediterranean Climate",
+                explanation: "The Mediterranean climate is unique because its dry season coincides with the time of the highest sun and warmest temperatures (summer). It is characterized by warm to hot, dry summers and mild to cool, wet winters. This climate is found in regions bordering the Mediterranean Sea, as well as in parts of California, Chile, South Africa, and Australia.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            // Science
+            {
+                question: "Consider the following statements regarding vitamins and their deficiency diseases:",
+                statements: [
+                    "I. Deficiency of Vitamin C causes Scurvy, characterized by bleeding gums.",
+                    "II. Deficiency of Vitamin D causes Rickets in children, leading to bone deformities.",
+                    "III. Deficiency of Vitamin B1 (Thiamine) causes Pellagra, which affects the skin and nervous system."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "Only I and II",
+                explanation: "Statement III is incorrect. Deficiency of Vitamin B1 (Thiamine) causes Beriberi. Pellagra is caused by a deficiency of Vitamin B3 (Niacin). Statements I and II are correct. Scurvy is the classic disease of Vitamin C deficiency, and Rickets is caused by a lack of Vitamin D.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Which of the following principles of physics explains the working of a hydraulic lift?",
+                options: ["Archimedes' Principle", "Bernoulli's Principle", "Pascal's Law", "Newton's Third Law of Motion"],
+                answer: "Pascal's Law",
+                explanation: "Pascal's Law states that a pressure change at any point in a confined incompressible fluid is transmitted throughout the fluid such that the same change occurs everywhere. Hydraulic systems, like lifts and brakes, use this principle. A small force applied to a small area creates a pressure that is transmitted to a larger area, resulting in a much larger force.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "In the context of human biology, which part of the brain is responsible for maintaining posture, balance, and equilibrium?",
+                options: ["Cerebrum", "Cerebellum", "Medulla Oblongata", "Hypothalamus"],
+                answer: "Cerebellum",
+                explanation: "The Cerebellum, located at the back of the brain, is crucial for coordinating voluntary movements as well as for a number of functions including motor skills such as balance, coordination, and posture. The Cerebrum is responsible for higher functions like thought and action. The Medulla Oblongata controls involuntary functions like breathing and heart rate.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Consider the following statements about alloys:",
+                statements: [
+                    "I. Brass is an alloy of Copper and Zinc.",
+                    "II. Bronze is an alloy of Copper and Tin.",
+                    "III. Stainless Steel is an alloy of Iron, Chromium, and Nickel."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. Brass (Cu + Zn) and Bronze (Cu + Sn) are two of the most common copper-based alloys. Stainless steel's resistance to rust and corrosion is primarily due to the addition of chromium (and often nickel) to iron.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "What is the 'escape velocity' of Earth?",
+                options: [
+                    "The minimum speed needed for an object to break free from Earth's gravitational pull without further propulsion.",
+                    "The speed at which an object orbits the Earth in a stable circular path.",
+                    "The speed of light in a vacuum.",
+                    "The rotational speed of the Earth at the equator."
+                ],
+                answer: "The minimum speed needed for an object to break free from Earth's gravitational pull without further propulsion.",
+                explanation: "Escape velocity is the minimum speed required for a free, non-propelled object to escape from the gravitational influence of a massive body. The escape velocity from Earth is about 11.2 kilometers per second (or about 40,320 km/h).",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Which of the following are functions of the liver in the human body?",
+                statements: [
+                    "I. Production of bile for digestion.",
+                    "II. Detoxification of blood.",
+                    "III. Synthesis of plasma proteins like albumin and fibrinogen.",
+                    "IV. Production of insulin."
+                ],
+                options: ["Only I, II and III", "Only I and III", "Only II, III and IV", "All of the above"],
+                answer: "Only I, II and III",
+                explanation: "Statement IV is incorrect. Insulin is a hormone produced by the beta cells of the pancreas. The liver performs a vast range of critical functions, including producing bile (I), filtering and detoxifying the blood (II), and synthesizing essential proteins (III).",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "The phenomenon of 'Total Internal Reflection' is the principle behind the working of:",
+                options: ["Optical fibers", "Periscopes", "Telescopes", "Microscopes"],
+                answer: "Optical fibers",
+                explanation: "Optical fibers work on the principle of total internal reflection. Light signals are sent down the fiber, and they continuously 'bounce' off the inner walls of the fiber at an angle greater than the critical angle, allowing them to travel long distances with minimal loss of signal strength.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Which of the following is a plant hormone responsible for ripening of fruits?",
+                options: ["Auxin", "Gibberellin", "Cytokinin", "Ethylene"],
+                answer: "Ethylene",
+                explanation: "Ethylene is a gaseous plant hormone that plays a key role in the ripening of many fruits, such as bananas, tomatoes, and apples. It triggers processes that lead to changes in color, texture, and flavor. Auxins are involved in cell growth, Gibberellins in stem elongation, and Cytokinins in cell division.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "In chemistry, what does the pH scale measure?",
+                options: ["The purity of a substance", "The concentration of a solution", "The acidity or alkalinity of an aqueous solution", "The temperature at which a substance boils"],
+                answer: "The acidity or alkalinity of an aqueous solution",
+                explanation: "pH stands for 'potential of Hydrogen'. It is a logarithmic scale used to specify the acidity or basicity of an aqueous solution. Solutions with a pH less than 7 are acidic, solutions with a pH greater than 7 are basic (alkaline), and solutions with a pH of 7 are neutral.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Which law of thermodynamics states that the entropy of an isolated system always increases?",
+                options: ["Zeroth Law of Thermodynamics", "First Law of Thermodynamics", "Second Law of Thermodynamics", "Third Law of Thermodynamics"],
+                answer: "Second Law of Thermodynamics",
+                explanation: "The Second Law of Thermodynamics has several statements, one of which is that the total entropy (a measure of disorder or randomness) of an isolated system can never decrease over time. It always tends to increase. The First Law is the law of conservation of energy. The Third Law states that the entropy of a system approaches a constant value as the temperature approaches absolute zero.",
+                tag: "Science", tagClass: "tag-science"
+            },
+            // Economy
+            {
+                question: "Consider the following statements regarding the Monetary Policy Committee (MPC) of India:",
+                statements: [
+                    "I. It is responsible for fixing the benchmark policy interest rate (repo rate) to control inflation.",
+                    "II. It is a six-member committee headed by the Union Finance Minister.",
+                    "III. The committee is required to meet at least four times in a year."
+                ],
+                options: ["Only I and III", "Only I and II", "Only II and III", "All I, II, and III"],
+                answer: "Only I and III",
+                explanation: "Statement II is incorrect. The MPC is headed by the Governor of the Reserve Bank of India (RBI), not the Finance Minister. It has six members: three officials of the RBI and three external members nominated by the Government of India. Statements I and III are correct. Its primary mandate is to maintain price stability while keeping in mind the objective of growth, and it meets at least four times a year.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "What is 'Fiscal Deficit'?",
+                options: [
+                    "The difference between the government's total expenditure and its total revenue.",
+                    "The total borrowing requirement of the government from all sources.",
+                    "The difference between total revenue and total expenditure excluding interest payments.",
+                    "The excess of government's revenue expenditure over its revenue receipts."
+                ],
+                answer: "The total borrowing requirement of the government from all sources.",
+                explanation: "Fiscal Deficit is the most accurate representation of the government's total borrowing needs in a financial year. It is the difference between the government's total expenditure and its total receipts (excluding borrowings). A high fiscal deficit means the government is spending beyond its means and has to borrow heavily.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "Which of the following are components of India's Foreign Exchange Reserves (Forex)?",
+                statements: [
+                    "I. Foreign Currency Assets (FCAs)",
+                    "II. Gold Reserves",
+                    "III. Special Drawing Rights (SDRs)",
+                    "IV. Reserve Tranche Position (RTP) with the IMF"
+                ],
+                options: ["Only I, II and III", "Only I and II", "Only I, II, and IV", "All I, II, III, and IV"],
+                answer: "All I, II, III, and IV",
+                explanation: "India's Forex reserves, managed by the RBI, consist of all four components. Foreign Currency Assets (like US dollars, euros) form the largest component. Gold reserves, SDRs (an international reserve asset created by the IMF), and the Reserve Tranche Position with the IMF are the other components.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "The term 'Laffer Curve' in economics suggests a relationship between:",
+                options: ["Inflation and unemployment", "Government spending and economic growth", "Tax rates and the amount of tax revenue collected by governments", "Money supply and the price level"],
+                answer: "Tax rates and the amount of tax revenue collected by governments",
+                explanation: "The Laffer Curve is a theoretical representation of the relationship between tax rates and tax revenue. It suggests that as tax rates increase from 0%, tax revenue also increases, but only up to a certain point. Beyond this point, higher tax rates can discourage economic activity to such an extent that tax revenue actually begins to decrease.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "Which of the following is NOT a function of the Reserve Bank of India (RBI)?",
+                options: ["Issuer of currency", "Banker to the Government", "Custodian of foreign exchange reserves", "Formulation of fiscal policy"],
+                answer: "Formulation of fiscal policy",
+                explanation: "Fiscal policy, which deals with government taxation and spending, is formulated by the Ministry of Finance, Government of India. The RBI is responsible for formulating and implementing monetary policy. The other three options are key functions of the RBI.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "Consider the following statements regarding Goods and Services Tax (GST) in India:",
+                statements: [
+                    "I. It is a destination-based tax on the consumption of goods and services.",
+                    "II. The GST Council is a constitutional body responsible for making recommendations on issues related to GST.",
+                    "III. Petroleum products, alcohol for human consumption, and electricity are currently outside the purview of GST."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "Only I and II",
+                explanation: "Statement III is partially incorrect. While alcohol for human consumption and petroleum products (crude, petrol, diesel, ATF, natural gas) are currently outside GST, electricity is not. The taxation of electricity varies by state. Statements I and II are correct. GST is levied at the point of consumption, and the GST Council, chaired by the Union Finance Minister, is the governing body.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "What does 'disinflation' refer to?",
+                options: ["A decrease in the general price level of goods and services.", "A situation of high inflation combined with high unemployment.", "A slowing down of the rate of inflation.", "A sharp and sudden fall in the value of a currency."],
+                answer: "A slowing down of the rate of inflation.",
+                explanation: "Disinflation is a reduction in the rate of inflation. For example, if the inflation rate falls from 5% to 3%, it is disinflation. Prices are still rising, but at a slower pace. This is different from deflation, which is a decrease in the general price level (negative inflation). Stagflation is high inflation with high unemployment.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "The 'Priority Sector Lending' (PSL) norms in India mandate banks to lend a certain portion of their funds to specific sectors. Which of the following is/are considered Priority Sectors?",
+                statements: [
+                    "I. Agriculture",
+                    "II. Micro, Small and Medium Enterprises (MSMEs)",
+                    "III. Education and Housing",
+                    "IV. Social Infrastructure"
+                ],
+                options: ["Only I and II", "Only I, II and III", "Only II and IV", "All I, II, III, and IV"],
+                answer: "All I, II, III, and IV",
+                explanation: "The RBI mandates banks to lend a specific portion of their credit to sectors that are considered important for the country's development. All the sectors listed – Agriculture, MSMEs, Education, Housing, Social Infrastructure, Renewable Energy, and Export Credit – are part of the Priority Sector Lending categories.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "Which committee's recommendations led to the establishment of the National Bank for Agriculture and Rural Development (NABARD)?",
+                options: ["Narasimham Committee", "Sivaraman Committee", "Rangarajan Committee", "Kelkar Committee"],
+                answer: "Sivaraman Committee",
+                explanation: "NABARD was established on July 12, 1982, by an Act of Parliament. Its establishment was based on the recommendations of the B. Sivaraman Committee (the Committee to Review Arrangements for Institutional Credit for Agriculture and Rural Development). NABARD is the apex development financial institution for agriculture and rural development in India.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "In the context of the balance of payments, what does the 'Current Account' include?",
+                options: [
+                    "Foreign Direct Investment (FDI) and Foreign Portfolio Investment (FPI).",
+                    "Balance of trade (exports and imports of goods), balance of services, and net transfer payments.",
+                    "External borrowings and assistance.",
+                    "Changes in the foreign exchange reserves."
+                ],
+                answer: "Balance of trade (exports and imports of goods), balance of services, and net transfer payments.",
+                explanation: "The Current Account records the flow of goods, services, and transfer payments (like remittances and donations). The balance of trade (or visible trade) and balance of invisibles (services, income, transfers) are its main components. FDI, FPI, and borrowings are part of the Capital Account.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            // Static GK
+            {
+                question: "Consider the following pairs of classical dances and their states of origin:",
+                statements: [
+                    "I. Sattriya - Assam",
+                    "II. Mohiniyattam - Kerala",
+                    "III. Kuchipudi - Tamil Nadu"
+                ],
+                "options": ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                "answer": "Only I and II",
+                "explanation": "Statement III is incorrect. Kuchipudi is the classical dance form of Andhra Pradesh. Sattriya from Assam and Mohiniyattam from Kerala are correctly matched. Tamil Nadu's classical dance is Bharatanatyam.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "Which of the following is the highest peacetime gallantry award in India?",
+                options: ["Param Vir Chakra", "Maha Vir Chakra", "Ashoka Chakra", "Kirti Chakra"],
+                answer: "Ashoka Chakra",
+                explanation: "The Ashoka Chakra is India's highest peacetime military decoration awarded for valor, courageous action or self-sacrifice away from the battlefield. The Param Vir Chakra is the highest military decoration, awarded for displaying distinguished acts of valor during wartime.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "The headquarters of the International Court of Justice (ICJ) is located in:",
+                options: ["Geneva, Switzerland", "New York, USA", "The Hague, Netherlands", "Paris, France"],
+                answer: "The Hague, Netherlands",
+                explanation: "The International Court of Justice, the principal judicial organ of the United Nations, is headquartered at the Peace Palace in The Hague, Netherlands. It is the only one of the six principal organs of the UN not located in New York.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "Match the following UNESCO World Heritage Sites with their respective states:",
+                statements: [
+                    "A. Sun Temple, Konark",
+                    "B. Khajuraho Group of Monuments",
+                    "C. Hampi Group of Monuments",
+                    "D. Ajanta Caves",
+                    "1. Karnataka",
+                    "2. Maharashtra",
+                    "3. Odisha",
+                    "4. Madhya Pradesh"
+                ],
+                options: ["A-3, B-4, C-1, D-2", "A-2, B-1, C-4, D-3", "A-3, B-1, C-4, D-2", "A-4, B-3, C-2, D-1"],
+                answer: "A-3, B-4, C-1, D-2",
+                explanation: "The correct matches are: Sun Temple, Konark - Odisha; Khajuraho Group of Monuments - Madhya Pradesh; Hampi Group of Monuments - Karnataka; Ajanta Caves - Maharashtra.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "Who is known as the 'Father of the Indian Space Program'?",
+                options: ["Homi J. Bhabha", "C.V. Raman", "Vikram Sarabhai", "A.P.J. Abdul Kalam"],
+                answer: "Vikram Sarabhai",
+                explanation: "Dr. Vikram Sarabhai is internationally regarded as the Father of the Indian Space Program. He was instrumental in the establishment of the Indian Space Research Organisation (ISRO). Homi J. Bhabha is known as the Father of the Indian Nuclear Program.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "The 'Durand Cup' is associated with which sport?",
+                options: ["Cricket", "Hockey", "Football", "Tennis"],
+                answer: "Football",
+                explanation: "The Durand Cup is the oldest football tournament in Asia and the third oldest in the world. It is an annual domestic football competition in India. Other major football trophies in India include the Santosh Trophy and the Kalinga Super Cup.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "Which of the following statements about the United Nations Security Council (UNSC) is correct?",
+                statements: [
+                    "I. It consists of 15 members in total.",
+                    "II. The five permanent members have the power of veto.",
+                    "III. The non-permanent members are elected for a term of two years."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. The UNSC has 15 members: 5 permanent members (China, France, Russia, the UK, and the US), who hold veto power, and 10 non-permanent members elected for two-year terms by the General Assembly.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "The 'Ramon Magsaysay Award' is often referred to as the 'Nobel Prize of Asia'. It is given out by a foundation based in which country?",
+                options: ["Japan", "South Korea", "The Philippines", "Indonesia"],
+                answer: "The Philippines",
+                explanation: "The Ramon Magsaysay Award is an annual award established to perpetuate former Philippine President Ramon Magsaysay's example of integrity in governance and selfless service to the people. The foundation is based in Manila, Philippines.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "The instrument 'Sarangi' is primarily associated with which type of Indian music?",
+                options: ["Carnatic Classical Music", "Hindustani Classical Music", "Folk Music of Rajasthan", "Ghazal and Thumri"],
+                answer: "Hindustani Classical Music",
+                explanation: "The Sarangi is a bowed, short-necked string instrument from the Indian subcontinent that is used in Hindustani classical music. It is said to most resemble the sound of the human voice. Pandit Ram Narayan was a famous Sarangi player.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "Which day is celebrated as the 'National Statistics Day' in India to commemorate the birth anniversary of P.C. Mahalanobis?",
+                options: ["June 29", "July 1", "August 29", "October 16"],
+                answer: "June 29",
+                explanation: "National Statistics Day is celebrated on June 29 every year in India to honor the contributions of Professor Prasanta Chandra Mahalanobis in the fields of statistics and economic planning. August 29 is National Sports Day (Dhyan Chand's birthday).",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            // Newly added harder questions
+            {
+                question: "Consider the following statements about the National Quantum Mission (NQM) of India:",
+                statements: [
+                    "I. The mission aims to seed, nurture, and scale up scientific and industrial R&D in Quantum Technology.",
+                    "II. It is being implemented by the Ministry of Electronics and Information Technology (MeitY).",
+                    "III. A key objective is to develop intermediate-scale quantum computers with 50-1000 physical qubits in 8 years."
+                ],
+                options: ["Only I and II", "Only I and III", "Only II and III", "All I, II, and III"],
+                answer: "Only I and III",
+                explanation: "Statements I and III are correct objectives of the NQM. However, statement II is incorrect. The mission is being implemented by the Department of Science & Technology (DST), not MeitY. This is a key detail about the mission's administration.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Regarding India's recent geopolitical initiatives, which of the following statements is/are correct?",
+                statements: [
+                    "I. The I2U2 group comprises India, Israel, UAE, and the USA, focusing on joint investments in key sectors.",
+                    "II. The India-Middle East-Europe Economic Corridor (IMEC) was announced during the G20 summit hosted by India in New Delhi.",
+                    "III. Both the I2U2 and IMEC are widely seen as strategic responses to China's Belt and Road Initiative (BRI)."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are factually correct. I2U2 stands for India, Israel, UAE, and USA. The landmark IMEC was a major outcome of the G20 Summit in New Delhi. Both initiatives promote an alternative model of connectivity and cooperation, thus acting as a strategic counterweight to the BRI.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "The Nobel Memorial Prize in Economic Sciences 2024 was awarded to Daron Acemoglu, Simon Johnson, and James A. Robinson. Which statement best describes their work?",
+                options: [
+                    "For their work on auction theory and inventing new auction formats.",
+                    "For their studies on how institutions are formed and how they affect prosperity, as detailed in their book 'Why Nations Fail'.",
+                    "For their experimental approach to alleviating global poverty.",
+                    "For their analysis of financial markets and asset pricing."
+                ],
+                answer: "For their studies on how institutions are formed and how they affect prosperity, as detailed in their book 'Why Nations Fail'.",
+                explanation: "The 2024 Nobel in Economics was awarded for their influential research on the critical role of political and economic institutions in the long-run prosperity of nations. Their book 'Why Nations Fail' is a cornerstone of this work, making this option more precise and comprehensive than just a general statement.",
+                tag: "Current Affairs", tagClass: "tag-ca"
+            },
+            {
+                question: "Which of the following were distinct features of the administrative structure of the Vijayanagara Empire?",
+                statements: [
+                    "I. A hierarchical system of administrative divisions: Mandalams (provinces), Nadus (districts), Sthalas (sub-districts), and Gramas (villages).",
+                    "II. The 'Nayankara system', where military chiefs ('Nayaks') held land ('amaram') from the king in return for military service.",
+                    "III. The 'Ayagar system', where a body of 12 hereditary village functionaries managed local affairs and were compensated with tax-free lands."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements correctly describe the key administrative pillars of the Vijayanagara Empire. The hierarchical division (I), the feudal Nayankara system (II), and the local Ayagar system (III) were all integral to its governance.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Match the following 19th-century socio-religious organizations with their primary founders:",
+                statements: [
+                    "A. Tattvabodhini Sabha",
+                    "B. Prarthana Samaj",
+                    "C. Arya Samaj",
+                    "D. Dharma Sabha",
+                    "1. Dayananda Saraswati",
+                    "2. Radhakanta Deb",
+                    "3. Debendranath Tagore",
+                    "4. Atmaram Pandurang"
+                ],
+                options: ["A-3, B-4, C-1, D-2", "A-4, B-3, C-2, D-1", "A-3, B-1, C-4, D-2", "A-2, B-4, C-1, D-3"],
+                answer: "A-3, B-4, C-1, D-2",
+                explanation: "The correct matches are: Tattvabodhini Sabha was founded by Debendranath Tagore. Prarthana Samaj was founded by Atmaram Pandurang. Arya Samaj was founded by Dayananda Saraswati. The Dharma Sabha was an orthodox Hindu organization founded by Radhakanta Deb to counter the reforms of the Brahmo Samaj.",
+                tag: "History", tagClass: "tag-history"
+            },
+            {
+                question: "Consider the majorities required in the Indian Parliament for the following procedures:",
+                statements: [
+                    "I. The impeachment of the President requires a special majority of two-thirds of the total membership of each House.",
+                    "II. The removal of a Supreme Court judge requires a special majority, defined as a majority of the total membership of a House and a majority of not less than two-thirds of the members of that House present and voting.",
+                    "III. A Constitutional Amendment Bill under Article 368 that does not affect federalism must be passed by a simple majority in both Houses."
+                ],
+                options: ["Only I and II", "Only II", "Only I and III", "All I, II, and III"],
+                answer: "Only I and II",
+                explanation: "Statement I and II correctly describe the stringent majority requirements for impeaching the President and removing a judge. Statement III is incorrect; a constitutional amendment under Article 368 requires a special majority (majority of total membership AND 2/3 of present and voting), not a simple majority.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "With reference to Parliamentary Committees in India, which of the following statements is/are correct?",
+                statements: [
+                    "I. The Public Accounts Committee (PAC) consists of 22 members, with 15 from Lok Sabha and 7 from Rajya Sabha.",
+                    "II. By convention, the Chairman of the PAC is appointed by the Speaker from amongst the members of the main opposition party.",
+                    "III. The Estimates Committee is the largest financial committee, consisting of 30 members, all of whom are exclusively from the Lok Sabha."
+                ],
+                options: ["Only I and III", "Only II and III", "Only I and II", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct and represent key facts about India's three main financial committees. The composition of PAC, the convention for its chairmanship, and the exclusive Lok Sabha membership of the Estimates Committee are all defining features.",
+                tag: "Polity", tagClass: "tag-polity"
+            },
+            {
+                question: "Identify the correct statements about major ocean currents:",
+                statements: [
+                    "I. The Benguela Current is a broad, northward-flowing cold current that forms the eastern portion of the South Atlantic Ocean gyre.",
+                    "II. The Agulhas Current is a warm, swift current in the southwest Indian Ocean that flows down the east coast of Africa.",
+                    "III. The confluence of the cold Labrador Current and the warm Gulf Stream off the coast of Newfoundland creates one of the world's richest fishing grounds due to the mixing of waters."
+                ],
+                options: ["Only I and III", "Only II and III", "Only I and II", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements accurately describe the nature and location of these significant ocean currents. The Benguela (cold) and Agulhas (warm) are key currents around Southern Africa. The meeting of the Labrador and Gulf Stream is a classic geographical example of how ocean currents impact marine ecosystems and climate.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "What is 'temperature inversion', and under what conditions does it typically occur?",
+                options: [
+                    "A decrease in temperature with an increase in altitude, common on sunny afternoons.",
+                    "An increase in temperature with an increase in altitude, often occurring on long, calm, and clear winter nights.",
+                    "A rapid drop in temperature at sea level caused by cold ocean currents making landfall.",
+                    "A stable, unchanging temperature profile found exclusively in the stratosphere."
+                ],
+                answer: "An increase in temperature with an increase in altitude, often occurring on long, calm, and clear winter nights.",
+                explanation: "Temperature inversion is a reversal of the normal atmospheric condition (where air gets colder with altitude). It happens when a layer of cool air at the surface is overlain by a layer of warmer air. This is common on calm, clear winter nights when the ground radiates heat away quickly, cooling the air directly above it. This phenomenon traps pollutants and can lead to severe smog.",
+                tag: "Geography", tagClass: "tag-geography"
+            },
+            {
+                question: "Consider the following statements about the CRISPR-Cas9 gene-editing technology:",
+                statements: [
+                    "I. It is a technology adapted from a natural defence mechanism found in bacteria and archaea.",
+                    "II. The 'Cas9' protein acts as a pair of 'molecular scissors' that can precisely cut strands of DNA.",
+                    "III. A guide RNA (gRNA) molecule is used to direct the Cas9 protein to the target sequence in the genome."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements provide a correct and detailed description of the CRISPR-Cas9 system. It originates from bacterial immune systems (I), uses the Cas9 nuclease to cut DNA (II), and relies on a guide RNA for its precision targeting (III).",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Which of the following statements about gravitational waves are true?",
+                statements: [
+                    "I. They are disturbances or 'ripples' in the curvature of spacetime, generated by accelerated masses.",
+                    "II. Their existence was first predicted by Albert Einstein in 1916 on the basis of his theory of general relativity.",
+                    "III. The first direct observation of gravitational waves was made in 2015 by the LIGO and Virgo collaborations, originating from a merging binary black hole system."
+                ],
+                options: ["Only I and II", "Only II and III", "Only I and III", "All I, II, and III"],
+                answer: "All I, II, and III",
+                explanation: "All three statements are correct. They accurately describe what gravitational waves are (I), their theoretical origin in Einstein's work (II), and the historic first detection by LIGO that opened a new window to the universe (III).",
+                tag: "Science", tagClass: "tag-science"
+            },
+            {
+                question: "Which of the following correctly defines 'Structural Unemployment'?",
+                options: [
+                    "Unemployment that occurs when people are in between jobs or are entering the labor force for the first time.",
+                    "Unemployment that rises during economic downturns and falls when the economy improves.",
+                    "Unemployment resulting from a long-term mismatch between the skills workers possess and the skills employers need, often due to technological changes.",
+                    "Unemployment that occurs during certain seasons of the year."
+                ],
+                answer: "Unemployment resulting from a long-term mismatch between the skills workers possess and the skills employers need, often due to technological changes.",
+                explanation: "This is the precise definition of structural unemployment. It's a more persistent form of unemployment caused by fundamental shifts in an economy, such as automation or the decline of certain industries. Frictional unemployment is being 'in-between jobs'. Cyclical unemployment is tied to the business cycle. Seasonal unemployment is tied to seasons.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "The World Bank Group consists of five international organizations. Which of the following is NOT one of these five institutions?",
+                options: [
+                    "International Bank for Reconstruction and Development (IBRD)",
+                    "International Finance Corporation (IFC)",
+                    "World Trade Organization (WTO)",
+                    "Multilateral Investment Guarantee Agency (MIGA)"
+                ],
+                answer: "World Trade Organization (WTO)",
+                explanation: "The World Bank Group comprises five institutions: IBRD, IDA (International Development Association), IFC, MIGA, and ICSID (International Centre for Settlement of Investment Disputes). The World Trade Organization (WTO) is a completely separate entity that deals with the global rules of trade between nations.",
+                tag: "Economy", tagClass: "tag-eco"
+            },
+            {
+                question: "The 'Global Risks Report', an annual publication that identifies major threats to the world, is released by which organization?",
+                options: ["World Bank", "International Monetary Fund (IMF)", "World Economic Forum (WEF)", "United Nations (UN)"],
+                answer: "World Economic Forum (WEF)",
+                explanation: "The Global Risks Report is a flagship annual publication of the World Economic Forum (WEF), produced in partnership with major global risk management firms. It is released ahead of the WEF's Annual Meeting in Davos.",
+                tag: "Static GK", tagClass: "tag-static"
+            },
+            {
+                question: "The Kumbh Mela, a major Hindu pilgrimage and festival, is held rotationally at four specific river-bank locations. Which of the following cities is NOT one of these four sites?",
+                options: ["Prayagraj", "Haridwar", "Ujjain", "Varanasi"],
+                answer: "Varanasi",
+                explanation: "The four sacred locations for the Kumbh Mela are Prayagraj (at the confluence of the Ganga, Yamuna, and mythical Saraswati), Haridwar (on the Ganga), Ujjain (on the Shipra), and Nashik (on the Godavari). While Varanasi is a major Hindu pilgrimage city on the Ganga, it is not one of the four designated Kumbh Mela sites.",
+                tag: "Static GK", tagClass: "tag-static"
+            }
+        ];
+
+        const container = document.getElementById('questions-container');
+
+        questions.forEach((q, index) => {
+            const card = document.createElement('div');
+            card.className = 'question-card bg-white p-6 rounded-lg shadow-md border border-gray-200';
+
+            let statementsHTML = '';
+            if (q.statements) {
+                statementsHTML = '<ul class="list-none space-y-2 my-4 text-gray-700">';
+                q.statements.forEach(stmt => {
+                    statementsHTML += `<li>${stmt}</li>`;
+                });
+                statementsHTML += '</ul>';
+            }
+
+            let optionsHTML = '<div class="space-y-3 mt-4">';
+            q.options.forEach(opt => {
+                optionsHTML += `
+                    <div class="flex items-center">
+                        <input type="radio" name="q${index}" id="q${index}_${opt.replace(/\s+/g, '')}" class="h-4 w-4 text-emerald-600 border-gray-300 focus:ring-emerald-500">
+                        <label for="q${index}_${opt.replace(/\s+/g, '')}" class="ml-3 block text-sm font-medium text-gray-700">${opt}</label>
+                    </div>`;
+            });
+            optionsHTML += '</div>';
+
+            card.innerHTML = `
+                <div class="flex justify-between items-start">
+                    <p class="text-lg font-semibold text-gray-800">Q${index + 1}. ${q.question}</p>
+                    <span class="tag ${q.tagClass}">${q.tag}</span>
+                </div>
+                ${statementsHTML}
+                ${optionsHTML}
+                <div class="mt-5">
+                    <button class="solution-toggle text-sm font-semibold text-emerald-600 hover:text-emerald-800">Show Solution</button>
+                    <div class="solution mt-4 p-4 bg-emerald-50 rounded-md">
+                        <p class="font-bold text-emerald-800">Correct Answer: ${q.answer}</p>
+                        <p class="mt-2 text-sm text-emerald-700">${q.explanation}</p>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        document.querySelectorAll('.solution-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const solutionDiv = button.nextElementSibling;
+                if (solutionDiv.style.display === 'none' || solutionDiv.style.display === '') {
+                    solutionDiv.style.display = 'block';
+                    button.textContent = 'Hide Solution';
+                } else {
+                    solutionDiv.style.display = 'none';
+                    button.textContent = 'Show Solution';
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
